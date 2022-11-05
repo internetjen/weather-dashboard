@@ -16,17 +16,37 @@
         What's The Weather?
         </p>
         <p class="subtitle">
-        Weather Dashboard
+        Search for A City
         </p>
     </div>
 </section>
 
 <main>
     <section class="section is-large">
-
         <!-- Search function -->
         <h2>Search for a City:</h2>
-        
+        <div class="field">
+            <label class="label">City Name</label>
+            <div class="control">
+              <input class="input" id="inputCity" type="text" placeholder="e.g. Chicago">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">State (US Only)</label>
+            <div class="control">
+              <input class="input" id="inputState" type="text" placeholder="e.g. IL">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Country</label>
+            <div class="control">
+              <input class="input" id="inputCountry" type="text" placeholder="e.g. US">
+            </div>
+          </div>
+            <div class="control">
+                <button class="button is-primary" id="button">Search</button>
+            </div>       
+            
         <!-- Current Weather  -->
 
         <!-- 5-Day Forecast -->
