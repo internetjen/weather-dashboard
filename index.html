@@ -20,42 +20,35 @@
         </p>
     </div>
 </section>
+<!-- Search function -->
+<main class="tile is-ancestor">
+    <div class="tile is-4 is-vertical is-parent">
+      <section class="tile is-child box">
+        <p class="title">Search for a City:</p>
+        <label class="label">City</label>
+        <input class="input" id="inputCity" type="text" placeholder="e.g. Chicago">
+        <label class="label">State (US Only)</label>
+        <input class="input" id="inputState" type="text" placeholder="e.g. IL">
+        <label class="label">Country</label>
+        <input class="input" id="inputCountry" type="text" placeholder="e.g. US">
+        <button class="button is-primary" id="searchButton">Search</button>
+      </section>
 
-<main>
-    <section class="section is-medium">
-        <!-- Search function -->
-        <h2>Search for a City:</h2>
-        <div class="field">
-            <label class="label">City Name</label>
-            <div class="control">
-              <input class="input" id="inputCity" type="text" placeholder="e.g. Chicago">
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">State (US Only)</label>
-            <div class="control">
-              <input class="input" id="inputState" type="text" placeholder="e.g. IL">
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">Country</label>
-            <div class="control">
-              <input class="input" id="inputCountry" type="text" placeholder="e.g. US">
-            </div>
-          </div>
-            <div class="control">
-                <button class="button is-primary" id="searchButton">Search</button>
-            </div>       
-            
-        <!-- Search function -->
-        <h2>Search history:</h2>
-        <div class="box">
-            <p id="test">this is a test</p>
-        </div>
-        <!-- Current Weather  -->
+    <!-- Search History -->
+      <section class="tile is-child box">
+        <p class="title">Past Searches</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+      </section>
+    </div>
 
-        <!-- 5-Day Forecast -->
-
+    <!-- Current Weather & 5-Day Forecast -->
+    <section class="tile is-parent">
+      <div class="tile is-child box">
+        <p class="title">Current Weather & 5-Day Forecast</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
+        <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
+        <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
+      </div>
     </section>
 </main>
 
@@ -69,7 +62,8 @@
         is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
         </p>
     </div>
-  </footer>
+</footer>
+
 
   <!-- Added link to the jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

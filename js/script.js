@@ -6,8 +6,8 @@ var inputState = document.querySelector('#inputState');
 var inputCountry = document.querySelector('#inputCountry');
 var searchButton = document.querySelector('#searchButton');
 
-
-searchButton.addEventListener("click", function(event) {
+//User input values and return weather info
+searchButton.addEventListener("click", function(event) { //listening for click to begin fetching apis
     event.preventDefault();
 
     var userInput =  {
@@ -17,7 +17,7 @@ searchButton.addEventListener("click", function(event) {
     };
 
     //fetch openweatherapi to get latitude and longitude of city
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${userInput.city},${userInput.state},${userInput.country}US&limit=1&appid=` + apiKey)
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${userInput.city},${userInput.state},${userInput.country}&limit=1&appid=` + apiKey)
         .then(response => response.json())
         .then (data => {
             var latValue = data[0]['lat'];
@@ -30,3 +30,4 @@ searchButton.addEventListener("click", function(event) {
 
     });
 });
+
