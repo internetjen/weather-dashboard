@@ -6,67 +6,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <title>Weather Dashboard</title>
 </head>
-<body>
-    
-<section class="hero is-info">
-    <div class="hero-body">
-        <p class="title">
-        What's The Weather?
-        </p>
-        <p class="subtitle">
-        Search for A City
-        </p>
-    </div>
-</section>
-<!-- Search function -->
-<main class="tile is-ancestor">
-    <div class="tile is-4 is-vertical is-parent">
-      <section class="tile is-child box">
-        <p class="title">Search for a City:</p>
-        <label class="label">City</label>
-        <input class="input" id="inputCity" type="text" placeholder="e.g. Chicago">
-        <label class="label">State (US Only)</label>
-        <input class="input" id="inputState" type="text" placeholder="e.g. IL">
-        <label class="label">Country</label>
-        <input class="input" id="inputCountry" type="text" placeholder="e.g. US">
-        <button class="button is-primary" id="searchButton">Search</button>
-      </section>
 
-    <!-- Search History -->
-      <section class="tile is-child box">
-        <p class="title">Past Searches</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-      </section>
-    </div>
-
-    <!-- Current Weather & 5-Day Forecast -->
-    <section class="tile is-parent">
-      <div class="tile is-child box">
-        <p class="title">Current Weather & 5-Day Forecast</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
-        <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
-        <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
-      </div>
+<body> 
+    <section class="hero is-info">
+        <div class="hero-body">
+            <p class="title">
+            What's The Weather?
+            </p>
+            <p class="subtitle">
+            Search for A City
+            </p>
+        </div>
     </section>
-</main>
+    <!-- Search function -->
+    <main class="tile is-ancestor">
+        <div class="tile is-3 is-vertical is-parent">
+        <section class="tile is-child box">
+            <p class="title">Search for a City:</p>
+            <label class="label">City</label>
+            <input class="input block" id="inputCity" type="text" placeholder="e.g. Chicago">
+            <label class="label">State (US Only)</label>
+            <input class="input block" id="inputState" type="text" placeholder="e.g. IL">
+            <label class="label">Country</label>
+            <input class="input block" id="inputCountry" type="text" placeholder="e.g. US">
+            <button class="button is-primary" id="searchButton">Search</button>
+        </section>
 
-<footer class="footer">
-    <div class="content has-text-centered">
-        <p>
-        created with ♥ by Jennifer Arboleda - &copy; 2022 internetjen, Inc.
-        </p>
-        <p>The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-        </p>
-    </div>
-</footer>
+        <!-- Search History -->
+        <section class="tile is-child box">
+            <p class="title">Past Searches</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+        </section>
+        </div>
+
+        <!-- Current Weather & 5-Day Forecast -->
+        <section class="tile is-parent">
+        <div class="tile is-child box">
+            <p class="title">Current Weather & 5-Day Forecast</p>
+            <!-- Current Weather -->
+            <section class="block present">
+                <p class="title">Current Forecast:</p> 
+                <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <article id="displayPresent" class="tile is-child box displayPresent">
+                    </article>
+                </div>
+            </section>
+            <!-- 5-Day Forecast -->
+            <section class="block future">
+                <p class="title">5-Day Forecast:</p> 
+                <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title futureDate">Date</p>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" class="icon"> 
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title futureDate">Date</p>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" class="icon"> 
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title futureDate">Date</p>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" class="icon"> 
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title futureDate">Date</p>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" class="icon"> 
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p class="title futureDate">Date</p>
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" class="icon"> 
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>
+                    </article>
+                </div>
+                </div>
+            </section>
+        </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+            created with ♥ by Jennifer Arboleda - &copy; 2022 internetjen, Inc.
+            </p>
+            <p>The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+        </div>
+    </footer>
 
 
   <!-- Added link to the jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script type="text/javascript" src="./js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    
 </body>
 </html>

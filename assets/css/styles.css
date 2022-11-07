@@ -1,0 +1,15 @@
+.present {
+    color:aqua;
+    background-color: black;
+    padding: 1em;
+    width: 100%;
+    
+}
+
+.future {
+    color: white;
+    background-color: black;
+    padding: 1em;
+    width: 100%;
+
+}
